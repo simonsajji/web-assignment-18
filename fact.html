@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- To calc the factorial of number using JS -->
+    <script>
+
+        // Varialble to store num for method 1
+        var num=parseInt(prompt("Enter the number to check for factorial..."));
+
+        // variable to store the number for method 2
+
+        num2=num;
+
+        // Method 1 using while loop
+        var f=1;
+
+        while(num>1){
+            f=f*(num);
+            num=num-1;
+
+        }
+
+        console.log("Method1. Using while Loop\n")
+
+        console.log(f);
+
+
+        // Method 2 Using Function recursively
+        var fact=1;
+
+        function factorial(number){
+            if(number>0){
+                return (number*factorial(number-1));
+
+            }
+            else{
+                return 1;
+            }
+            
+        }
+        
+        console.log("Method 2. Using recursive function\n");
+
+        fact=num2*factorial(num2-1);
+        
+        console.log(fact)
+        
+
+    </script>
+    
+</body>
+</html>

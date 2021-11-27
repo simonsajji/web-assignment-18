@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnagramofString</title>
+</head>
+<body>
+
+    <script>
+
+        var s1=prompt("Enter String1 please:");
+        var s2=prompt("Enter String2 please:");
+        s1=s1.toLowerCase();
+        s2=s2.toLowerCase();
+
+        function anagram(s1,s2){
+            
+            var ob={};
+            var ob2={};
+
+            if(s1.length!=s2.length){
+                console.log(false,"The strings are NOT ANAGRAM to each other");
+                document.write(false," The strings are NOT ANAGRAM to each other");
+            }
+
+            else{
+
+                // s1.length is equal to s2.length
+                
+                    
+                for(var i=0;i<s1.length;i++){
+
+                    // if-else For object1 ie; for string1
+
+                    if(ob[s1.charAt(i)]>=1 ){
+                        ob[s1.charAt(i)]=ob[s1.charAt(i)]+1;
+
+                    }
+                    
+                    else{
+                        ob[s1.charAt(i)]=1;
+
+                    }
+                    // if-else For object2 ie; for string2
+
+                    if(ob2[s2.charAt(i)]>=1 ){
+                        ob2[s2.charAt(i)]=ob2[s2.charAt(i)]+1;
+
+                    }
+                    else{
+                        ob2[s2.charAt(i)]=1;
+
+                    }
+                    
+                }
+                console.log("For string 1- object1 is created:",ob);
+                console.log("For string 2- object2 is created:",ob2);
+
+                // Now checking the count of each character and  it mnatches count with each strings "s1" and "s2"
+
+                var bool=false;
+
+                for(var key in ob ){
+                    for( var key2 in ob2){
+                        if(key===key2){
+                            if(ob[key]===ob2[key2]){
+                                bool=true;
+
+                            }
+                            else{
+
+                                bool=false;
+                                break;
+
+                            }
+
+                            
+
+                        }
+                       
+                     }
+                    if(bool==false){
+                        bool=false;
+                        break;
+                    }
+
+                }
+                if(bool){
+
+                    console.log(bool,"The strings are ANAGRAM to each other");
+                    document.write(bool," The strings are  ANAGRAM to each other");
+                }
+                else{
+                    console.log(bool," The strings are NOT ANAGRAM to each other");
+                    document.write(bool," The strings are NOT ANAGRAM to each other");
+                }
+                
+
+
+
+            }
+
+           
+        }
+        // Calling anagram funtion to check whether the striings are Anagram or not.
+
+
+        anagram(s1,s2);
+
+
+    </script>
+    
+</body>
+</html>
